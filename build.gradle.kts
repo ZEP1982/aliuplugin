@@ -15,9 +15,7 @@ buildscript {
         classpath("com.android.tools.build:gradle:7.0.4")
         // Aliucord gradle plugin which makes everything work and builds plugins
         classpath("com.aliucord:gradle:main-SNAPSHOT")
-        // Kotlin support. Remove if you want to use Java
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21")
-    }
+        }
 }
 
 allprojects {
@@ -35,14 +33,14 @@ fun Project.android(configuration: BaseExtension.() -> Unit) = extensions.getByN
 subprojects {
     apply(plugin = "com.android.library")
     apply(plugin = "com.aliucord.gradle")
-    // Remove if using Java
-    apply(plugin = "kotlin-android")
+    // Remove if using Java 
+    }
 
     // Fill out with your info
     aliucord {
-        author("DISCORD USERNAME", 123456789L)
-        updateUrl.set("https://raw.githubusercontent.com/USERNAME/REPONAME/builds/updater.json")
-        buildUrl.set("https://raw.githubusercontent.com/USERNAME/REPONAME/builds/%s.zip")
+        author("ZEP1982", 123456789L)
+        updateUrl.set("https://raw.githubusercontent.com/ZEP1982/aliuplugin/builds/updater.json")
+        buildUrl.set("https://raw.githubusercontent.com/ZEP1982/aliuplugin/builds/%s.zip")
     }
 
     android {
